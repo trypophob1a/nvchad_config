@@ -1,0 +1,5 @@
+1. surround nvim help: 
+  :h nvim-surround.usage
+2. x-ray go:
+   :GoCheat
+   :GoDoc
