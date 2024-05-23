@@ -27,7 +27,7 @@ return {
         "gopls",
         "gofumpt",
         "goimports",
-        --"goimports-reviser",
+        "goimports-reviser",
         "golangci-lint",
         "golangci-lint-langserver",
         "gotests",
@@ -54,6 +54,7 @@ return {
       },
     },
   },
+
   {
     "Exafunction/codeium.vim",
     event = "BufEnter",
@@ -61,15 +62,24 @@ return {
 
   {
     "ray-x/go.nvim",
-    -- dependencies = {  -- optional packages
-    --     "ray-x/guihua.lua",
-    -- },
     config = function()
       require("go").setup()
     end,
     event = { "CmdlineEnter" },
     ft = { "go", "gomod" },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+  },
+  {
+    "mfussenegger/nvim-dap",
+  },
+
+  {
+    "leoluz/nvim-dap-go",
+    ft = "go",
+    dependencies = { "mfussenegger/nvim-dap" },
+    config = function(_, opts)
+      require("dap-go").setup(opts)
+    end,
   },
 
   {

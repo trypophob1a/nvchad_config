@@ -6,8 +6,8 @@ M.ui = {
         order = {
             "mode", "file", "git",
             "%=", "lsp_msg", "%=",
-            "diagnostics", "codeium_status",
-            "treesitter_status", "lsp", "cwd",
+            "diagnostics", 
+            "treesitter_status", "codeium_status", "lsp", "cwd",
             "cursor"
         },
         modules = {

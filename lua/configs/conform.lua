@@ -17,5 +17,13 @@ local options = {
      lsp_fallback = true,
    },
 }
+-- Добавляем автокоманду для выполнения :GoFmt после форматирования файлов Go
+
+-- vim.api.nvim_exec([[
+--  augroup go_fmt_and_import
+--    autocmd!
+--    autocmd BufWritePost *.go GoImports
+--  augroup END
+-- ]], false)
 
 require("conform").setup(options)
